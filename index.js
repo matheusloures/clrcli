@@ -43,7 +43,7 @@ rl.question('Do what? ', (answer) => {
   var write = require('coloringautils/writefile');
   var colorxjs = require('colorxjs');
   `, 
-  path.join(__dirname, './index.js')).then(res=>{
+  path.join(__dirname, 'index.js')).then(res=>{
 
             write(`
             {
@@ -58,7 +58,7 @@ rl.question('Do what? ', (answer) => {
                 "license": "ISC"
             };
             `, 
-            path.join(__dirname, './package.json')).then(res=>{
+            path.join(__dirname, 'package.json')).then(res=>{
 
                 console.log("See Yaaaaa!");
             },err=>{
