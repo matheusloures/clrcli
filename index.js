@@ -37,7 +37,7 @@ function write(what,where){
 rl.question('Do what? ', (answer) => {
 
     var a = path.basename(__dirname)
-    var b = process.argv[1]
+    var b = process.cwd();
     console.log(b,'hey')
     // var page1 = require('./indexroot.js')
     // var stringify = JSON.parse(page1)
@@ -47,8 +47,7 @@ rl.question('Do what? ', (answer) => {
   var write = require('coloringautils/writefile');
   var colorxjs = require('colorxjs');
   `, 
-  path.join(b, '.js')).then(res=>{
-    console.log(res,'hou')
+  path.join(b, '/index.js')).then(res=>{
 
             write(`
 {
@@ -63,7 +62,7 @@ rl.question('Do what? ', (answer) => {
     "license": "ISC"
 }
             `, 
-            path.join(b, '.js')).then(res=>{
+            path.join(b, 'package.json')).then(res=>{
 
                 console.log("See Yaaaaa!");
             },err=>{
