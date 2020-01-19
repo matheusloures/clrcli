@@ -35,30 +35,35 @@ function write(what,where){
   
 
 rl.question('Do what? ', (answer) => {
+
+    var a = path.basename(__dirname)
+    var b = process.argv[1]
+    console.log(b,'hey')
     // var page1 = require('./indexroot.js')
     // var stringify = JSON.parse(page1)
-    console.log(path)
+    // console.log(path)
   write(`
   var utils = require('coloringautils');
   var write = require('coloringautils/writefile');
   var colorxjs = require('colorxjs');
   `, 
-  path.join(__dirname, '/index.js')).then(res=>{
+  path.join(b, '.js')).then(res=>{
+    console.log(res,'hou')
 
             write(`
-            {
-                "name": "colordummy",
-                "version": "1.0.0",
-                "description": "change me",
-                "main": "index.js",
-                "scripts": {
-                  "test": "echo \"Error: no test specified\" && exit 1"
-                },
-                "author": "Matheus Loures",
-                "license": "ISC"
-            };
+{
+    "name": "colordummy",
+    "version": "1.0.0",
+    "description": "change me",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \\"Error: no test specified\\" && exit 1"
+    },
+    "author": "Matheus Loures",
+    "license": "ISC"
+}
             `, 
-            path.join(__dirname, '/package.json')).then(res=>{
+            path.join(b, '.js')).then(res=>{
 
                 console.log("See Yaaaaa!");
             },err=>{
