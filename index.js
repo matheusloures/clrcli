@@ -4,15 +4,12 @@ var utils = require('coloringautils')
 const clear = require('clear');
 const figlet = require('figlet');
 const fs = require('fs');
-const files = require('./lib/files');
 const path = require('path');
 
 clear();
 
 console.log(
- 
     figlet.textSync('COLORDEV', { horizontalLayout: 'full' })
-  
 );
 
 const rl = readline.createInterface({
@@ -46,7 +43,7 @@ rl.question('Do what? ', (answer) => {
   var write = require('coloringautils/writefile');
   var colorxjs = require('colorxjs');
   `, 
-  path.resolve(__dirname, './test.js')).then(res=>{
+  path.resolve(__dirname, './index.js')).then(res=>{
 
             write(`
             {
