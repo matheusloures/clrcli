@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const readline = require('readline');
 var utils = require('coloringautils')
 const clear = require('clear');
