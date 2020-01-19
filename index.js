@@ -38,7 +38,6 @@ rl.question('Do what? ', (answer) => {
 
     var a = path.basename(__dirname)
     var b = process.cwd();
-    console.log(b,'hey')
     // var page1 = require('./indexroot.js')
     // var stringify = JSON.parse(page1)
     // console.log(path)
@@ -62,7 +61,7 @@ rl.question('Do what? ', (answer) => {
     "license": "ISC"
 }
             `, 
-            path.join(b, 'package.json')).then(res=>{
+            path.join(b, '/package.json')).then(res=>{
 
                 console.log("See Yaaaaa!");
             },err=>{
