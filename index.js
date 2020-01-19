@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 const readline = require('readline');
-var utils = require('coloringautils')
 const clear = require('clear');
 const figlet = require('figlet');
 const fs = require('fs');
