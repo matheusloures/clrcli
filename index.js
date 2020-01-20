@@ -41,35 +41,113 @@ rl.question('Do what? ', (answer) => {
     // var page1 = require('./indexroot.js')
     // var stringify = JSON.parse(page1)
     // console.log(path)
-  write(`
-  var utils = require('coloringautils');
-  var write = require('coloringautils/writefile');
-  var colorxjs = require('colorxjs');
-  `, 
-  path.join(b, '/index.js')).then(res=>{
+    var indexNode = answer.indexOf('node')
+    var indexHtml = answer.indexOf('html')
+    var indexChatbot = answer.indexOf('chatbot')
 
-            write(`
-{
-    "name": "colordummy",
-    "version": "1.0.0",
-    "description": "change me",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \\"Error: no test specified\\" && exit 1"
-    },
-    "author": "Matheus Loures",
-    "license": "ISC"
-}
-            `, 
-            path.join(b, '/package.json')).then(res=>{
+    if(indexNode!==-1&&indexHtml===-1&&indexChatbot===-1){
+        write(`
+        var utils = require('coloringautils');
+        var write = require('coloringautils/writefile');
+        var colorxjs = require('colorxjs');
+        `, 
+        path.join(b, '/index.js')).then(res=>{
+      
+                  write(`
+      {
+          "name": "colordummy",
+          "version": "1.0.0",
+          "description": "change me",
+          "main": "index.js",
+          "scripts": {
+              "test": "echo \\"Error: no test specified\\" && exit 1"
+          },
+          "author": "Matheus Loures",
+          "license": "ISC"
+      }
+                  `, 
+                  path.join(b, '/package.json')).then(res=>{
+      
+                      console.log("See Yaaaaa!");
+                  },err=>{
+                      console.log("Deu ruim no finalzinho");
+                  })
+        },err=>{
+          console.log("Deu ruim");
+        })
+    }else if(indexNode!==-1&&indexHtml!==-1&&indexChatbot===-1){
+        write(`
+        var utils = require('coloringautils');
+        var write = require('coloringautils/writefile');
+        var colorxjs = require('colorxjs');
+        `, 
+        path.join(b, '/index.js')).then(res=>{
+      
+                  write(`
+      {
+          "name": "colordummy",
+          "version": "1.0.0",
+          "description": "change me",
+          "main": "index.js",
+          "scripts": {
+              "test": "echo \\"Error: no test specified\\" && exit 1"
+          },
+          "author": "Matheus Loures",
+          "license": "ISC"
+      }
+                  `, 
+                  path.join(b, '/package.json')).then(res=>{
 
-                console.log("See Yaaaaa!");
-            },err=>{
-                console.log("Deu ruim no finalzinho");
-            })
-  },err=>{
-    console.log("Deu ruim");
-  })
+                    var htmlPage = require('./htmlpage.html')
+
+                                write(`
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>This is the title!</title>
+    <meta name="description" content="Your gorgeous description">
+    <!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    
+    <!-- TODO https://www.google.com/webmasters/markup-helper/?hl=en -->
+
+    <link rel="stylesheet" href="./css>
+
+    <meta name="og:title" property="og:title" content="Your Awesome Open Graph Title">
+    <meta name="og:description" property="og:description" content="Your Awesome Open Graph description">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="">
+
+  </head>
+  <body>
+
+    <h1>Your irresistibly appealing heading</h1>
+    <img src="url" alt="Your clear-cut image description">
+    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
+    
+  </body>
+</html>
+                                            `, 
+                                            path.join(b, '/index.html')).then(res=>{
+                                
+                                                console.log("See Yaaaaa!");
+                                            },err=>{
+                                                console.log("Deu ruim no finalzinho");
+                                            })                  
+      
+                      console.log("See Yaaaaa!");
+                  },err=>{
+                      console.log("Deu ruim no finalzinho");
+                  })
+        },err=>{
+          console.log("Deu ruim");
+        })
+    }
+  
   
   rl.close();
 })
