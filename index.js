@@ -98,8 +98,6 @@ rl.question('Do what? ', (answer) => {
                   `, 
                   path.join(b, '/package.json')).then(res=>{
 
-                    var htmlPage = require('./htmlpage.html')
-
                                 write(`
 <!doctype html>
 <html>
@@ -128,7 +126,7 @@ rl.question('Do what? ', (answer) => {
     <h1>Your irresistibly appealing heading</h1>
     <img src="url" alt="Your clear-cut image description">
     <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-    
+
   </body>
 </html>
                                             `, 
